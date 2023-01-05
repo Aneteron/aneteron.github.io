@@ -18,6 +18,11 @@ class App{
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
 		container.appendChild( this.renderer.domElement );
 
+		const geometry = new THREE.BoxBufferGeometry();
+		const material = new THREE.MeshStandardMaterial( { Color: 0xff0000 } );
+
+		this.mesh = new THREE.Mesh( geometry, material ) ;
+
 		this.renderer.setAnimationLoop ( this.render.bind(this) );
 
         window.addEventListener('resize', this.resize.bind(this) );
@@ -28,7 +33,6 @@ class App{
     }
     
 	render( ) {
-		
 		this.renderer.render(this.scene, this.camera );  
         
     }
