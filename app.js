@@ -10,7 +10,7 @@ class App{
 		this.camera.position.set(0,0,4);
 
 		this.scene = new THREE.Scene();
-		this.scene.background = new THREE.Color(FF0000 );
+		this.scene.background = new THREE.Color(0xaaaaaa );
 
 		this.render = new THREE.WebGLRenderer( { antialising: true});
 		this.render.setPixelRatio(window.devicePixelRatio );
