@@ -31,6 +31,8 @@ class App{
 
 		this.scene.add(this.mesh);
 
+		const controls = new OrbitControls(this.camera, this.renderer.domElement);
+
 		this.renderer.setAnimationLoop ( this.render.bind(this) );
 
 
