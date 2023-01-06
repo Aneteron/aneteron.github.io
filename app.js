@@ -6,12 +6,11 @@ class App{
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
 
-		this.camera = new THREE.PerspectiveCamera(60, window.innerWidth/
-		window.innerHeight, 0.1, 100);
+		this.camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 100);
 		this.camera.position.set(0,0,4);
 
 		this.scene = new THREE.Scene();
-		this.scene.background = new THREE.Color(0xaaaaaa );
+		this.scene.background = new THREE.Color(0xCD5C5C);
 
 		this.renderer = new THREE.WebGLRenderer( { antialising: true});
 		this.renderer.setPixelRatio(window.devicePixelRatio );
@@ -23,7 +22,10 @@ class App{
 
 		this.mesh = new THREE.Mesh( geometry, material ) ;
 
+		this.scene.add(this.mesh);
+
 		this.renderer.setAnimationLoop ( this.render.bind(this) );
+
 
         window.addEventListener('resize', this.resize.bind(this) );
 	}	
