@@ -99,6 +99,8 @@
                 if (flower) {
                     const clone = flower.clone();
                     clone.position.copy(reticle.position);
+                    // rotate clone continuously around its Y axis
+                    clone.rotation.y += 0.01;
                     scene.add(clone);
                 }
             });
