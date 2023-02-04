@@ -17,13 +17,15 @@
 
     <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
+    <!-- <button onclick="activateXR()">Start Hello WebXR
+        // set button position at the bottom of the screen centered and with a bottom margin of 10% of the screen height
+        style="position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, 0);">
+    </button> -->
 
-    <!-- <button onclick="activateXR()">Start Hello WebXR</button> -->
-
-    
+    <!-- Start an immersive WebXR session on loading the page -->
     <script>
-        // start immersive WebXR sission when page loads
-        window.addEventListener('load', activateXR);
+        window.addEventListener("load", activateXR);
+
 
         async function activateXR() {
             // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
