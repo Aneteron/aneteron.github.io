@@ -106,9 +106,17 @@
 
             session.addEventListener("select", (event) => {
                 if (flower) {
+
+                    //load scene.json
+                    const loader = new THREE.ObjectLoader();
+                    loader.load("scene.json", function (obj) {
+                        scene.add(obj);
+                    });
+
                     const clone = flower.clone();
                     clone.position.copy(reticle.position);
                     clone.quaternion.copy(reticle.quaternion);
+                    clone.rotainon.y += 0.5;
                     scene.add(clone);
                 }
             });
