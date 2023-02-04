@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 
-<body>
+<body onload="activateXR()">
 
     <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
@@ -21,14 +21,8 @@
         // set button position at the bottom of the screen centered and with a bottom margin of 10% of the screen height
         style="position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, 0);">
     </button> -->
-
-    <!-- Start an immersive WebXR session on loading the page -->
-
-
-
     <script>
-        onLoad = "activateXR()"
-
+        
         async function activateXR() {
             // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
             const canvas = document.createElement("canvas");
@@ -110,7 +104,7 @@
                     const clone = flower.clone();
                     clone.position.copy(reticle.position);
                     // rotate clone continuously around its Y axis
-                    clone.rotation.y += 0.01;
+                    clone.rotateY(time / 1000 )
                     scene.add(clone);
                 }
             });
