@@ -13,16 +13,23 @@
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 
-<body onload="activateXR()">
+<body>
 
     <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
-    <!-- <button onclick="activateXR()">Start Hello WebXR
-        // set button position at the bottom of the screen centered and with a bottom margin of 10% of the screen height
-        style="position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, 0);">
-    </button> -->
+    <button onclick="activateXR()">Start Hello WebXR</button>
+
+    // set button position at the bottom of the screen centered horizontally with a margin of 20px from the bottom
+    <style>
+        button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
     <script>
-        
+
         async function activateXR() {
             // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
             const canvas = document.createElement("canvas");
