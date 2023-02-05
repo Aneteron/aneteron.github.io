@@ -109,6 +109,7 @@
                     const clone = flower.clone();
                     clone.position.copy(reticle.position);
                     clone.quaternion.copy(reticle.quaternion);
+                    clone.rotateY(0.01);
                     scene.add(clone);
                 }
             });
@@ -145,7 +146,7 @@
                     }
 
                     // Render the scene with THREE.WebGLRenderer.
-                    clone.rotateY(0.01);
+                    
                     renderer.render(scene, camera)
                 }
             }
